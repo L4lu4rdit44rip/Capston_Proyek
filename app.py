@@ -1,15 +1,5 @@
 import streamlit as st
 import tensorflow as tf
-import pathlib
-import shutil
-import os
-import glob
-from tensorflow import keras
-from tensorflow.keras.optimizers import RMSprop
-from tensorflow.keras.preprocessing.image import ImageDataGenerator
-from tensorflow.keras.layers import Input
-from tensorflow.keras.applications import ResNet50
-from tensorflow.keras.applications import ResNet152V2
 
 
 bg_img = """
@@ -50,7 +40,7 @@ st.markdown(bg_img, unsafe_allow_html=True)
 st.set_option('deprecation.showfileUploaderEncoding',False)
 @st.cache(allow_output_mutation=True)
 def load_model():
-  model = tf.keras.models.load_model('/capstonProyek/model.h5')
+  model = tf.keras.models.load_model('/content/model.h5')
   return model
 model = load_model()
 
